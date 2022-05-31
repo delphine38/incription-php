@@ -1,3 +1,29 @@
+.header {
+    background-color: gray;
+    color: rgb(0, 255, 255);
+    height: 100px;
+}
+
+header h1 {
+    padding: 30px;
+}
+
+main {
+    background-color: #374345;
+    color: white;
+    height: 300px;
+}
+
+main h2,
+p {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.inscrire {
+    color: rgb(0, 255, 255);
+}
+
 .inscription {
     text-align: center;
 }
