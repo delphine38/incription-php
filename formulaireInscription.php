@@ -1,19 +1,4 @@
 <?php
-// $host = "localhost";
-// $userDB = "inscriptionphp";
-// $passDB = "inscriptionphp";
-// $Database = "inscriptionphp";
-
-//MySQLi
-// $ConnectDB = mysqli_connect($host, $userDB, $passDB, $Database);
-
-//PDO
-// try {
-//     $objetPdo = new PDO("mysql:host=" . $host . ";dbname=" . $Database, $userDB, $passDB);
-//     $objetPdo->setAttribute(PDO::ERRMODE_EXCEPTION, 'ATTR_ERRMODE');
-// } catch (PDOEXeption $e) {
-//     echo $e;
-// }
 
 $bdd = new PDO($dsn = 'mysql:host=127.0.0.1;dbname=inscriptionphp', $username = 'inscriptionphp', $password = 'inscriptionphp');
 
@@ -49,6 +34,12 @@ if (isset($_POST['forminscription'])) {
                 // echo "ok";
                 $insertUser = $bdd->prepare("INSERT INTO users(identifiant, password, passwordconfirme) VALUES (?,?,?)");
                 $insertUser->execute(array($identifiant, $password, $passwordconfirme));
+
+
+                $_SESSION['comptecree'] = "votre compte à bien été créé";
+                header('Location: comptecree.php');
+
+
                 $erreur = "Votre compte à bien été créer";
             } else {
                 $erreur = "Les mots de pass ne sont pas identique";
@@ -71,39 +62,24 @@ if (isset($_POST['forminscription'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les piscines php</title>
+    <title>Formulaire d'inscription php</title>
     <link rel="stylesheet" href="style.css">
     <!--bootstrap-->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 </head>
 
 <body>
     <section class="header">
         <h1>Piscine</h1>
     </section>
-
     <main>
-        <h2>Vous souhaitez adressez un message bienveillant à l'équipe APF ? <br>
-            et nous vous en remercions</h2>
-        <p>Pour ce faire, </p>
-
-        <a href="formulaireInscription.php">
-            <p class="inscrire">Inscrivez-vous</p>
-        </a>
-    </main>
-    <footer>
-        <!-- <div class="inscription">
-
-            <h2>Inscription</h2>
-            <br>
-            <br>
-            <br> -->
-
-        <!-- action: ne rien mettre à l'interieur commme ça on reste sur la meme page pour le traitement -->
-        <!-- <form action="" method="POST"> -->
-        <!-- ici la value indique que la valeur restera afficher même si il y a une erreur -->
-        <!-- <div class="mb-3">
+        <div class="inscription">
+            <!-- action: ne rien mettre à l'interieur commme ça on reste sur la meme page pour le traitement -->
+            <form action="" method="POST">
+                <!-- ici la value indique que la valeur restera afficher même si il y a une erreur -->
+                <div class="mb-3">
                     <input type="text" name="identifiant" placeholder="identifiant" value="<?php if (isset($identifiant)) {
                                                                                                 echo $identifiant;
                                                                                             } ?>">
@@ -117,18 +93,12 @@ if (isset($_POST['forminscription'])) {
                 <div class="mb-3">
                     <input type="submit" value="Je m'inscris" name="forminscription" class="btn btn-primary">
                     <div class="mb-3">
-            </form>-->
-
-        //<?php
-            // if (isset($erreur)) {
-            // echo $erreur;
-            // echo '<font color="red">' . $erreur . "</font>";
-            // }
-            // 
+            </form>
+            <?php
+            if (isset($erreur)) {
+                // echo $erreur;
+                echo '<font color="red">' . $erreur . "</font>";
+            }
             ?>
         </div>
-    </footer>
-
-</body>
-
-</html>
+    </main>
