@@ -1,3 +1,10 @@
+<?php
+
+
+$bdd = new PDO($dsn = 'mysql:host=127.0.0.1;dbname=inscriptionphp', $username = 'inscriptionphp', $password = 'inscriptionphp');
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,12 +21,49 @@
 
 <body>
     <section class="header">
-        <h1>Piscine</h1>
+        <article class="h1header">
+            <h1>Piscine</h1>
+        </article>
+        <!-- <article class="h5header">
+            <h5>Se déconnecter</h5>
+        </article> -->
+
+
     </section>
 
     <main>
         <h2>Félicitations <?php echo $identifiant ?> ! Votre compte à bien été créé</h2>
-        <p>Vous allez pouvoir envoyer un message</p>
+        <p class="text-center">Vous allez pouvoir envoyer un message</p>
+
+
+        <!-- formulaire de connexion -->
+        <div class="inscription">
+            <h3>Connectez-vous</h3>
+            <!-- action: ne rien mettre à l'interieur commme ça on reste sur la meme page pour le traitement -->
+            <form action="" method="POST">
+                <!-- ici la value indique que la valeur restera afficher même si il y a une erreur -->
+                <div class="mb-3">
+                    <input type="text" name="identifiant" placeholder="identifiant" value="<?php if (isset($identifiant)) {
+                                                                                                echo $identifiant;
+                                                                                            } ?>">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="password" placeholder="Mot de pass">
+                </div>
+
+                <div>
+                    <input type="submit" value="Je me connecte" name="forminscription" class="btn btn-primary">
+                </div>
+
+            </form>
+            <?php
+            // if (isset($erreur)) {
+            //     // echo $erreur;
+            //     echo '<font color="red">' . $erreur . "</font>";
+            // }
+            ?>
+
+        </div>
 
 
     </main>

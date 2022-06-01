@@ -72,9 +72,19 @@ if (isset($_POST['forminscription'])) {
 
 <body>
     <section class="header">
-        <h1>Piscine</h1>
+        <article class="h1headerformulaireinscription">
+            <a href="index.php">
+                <h1>Piscine</h1>
+            </a>
+        </article>
+        <!-- <article class="h5header">
+            <h5>Se déconnecter</h5>
+        </article> -->
+
+
     </section>
     <main>
+        <h2>Inscription</h2>
         <div class="inscription">
             <!-- action: ne rien mettre à l'interieur commme ça on reste sur la meme page pour le traitement -->
             <form action="" method="POST">

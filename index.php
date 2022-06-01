@@ -80,17 +80,57 @@ if (isset($_POST['forminscription'])) {
 
 <body>
     <section class="header">
-        <h1>Piscine</h1>
+        <article class="h1header">
+            <h1>Piscine</h1>
+        </article>
+        <article class="h5header">
+            <h5>Se déconnecter</h5>
+        </article>
+
+
     </section>
 
     <main>
         <h2>Vous souhaitez adressez un message bienveillant à l'équipe APF ? <br>
             et nous vous en remercions</h2>
-        <p>Pour ce faire, </p>
+        <p class="text-center m-5">Pour ce faire, </p>
 
-        <a href="formulaireInscription.php">
-            <p class="inscrire">Inscrivez-vous</p>
-        </a>
+        <!-- formulaire de connexion -->
+        <div class="inscription">
+            <h3>Connectez-vous</h3>
+            <!-- action: ne rien mettre à l'interieur commme ça on reste sur la meme page pour le traitement -->
+            <form action="" method="POST">
+                <!-- ici la value indique que la valeur restera afficher même si il y a une erreur -->
+                <div class="mb-3">
+                    <input type="text" name="identifiant" placeholder="identifiant" value="<?php if (isset($identifiant)) {
+                                                                                                echo $identifiant;
+                                                                                            } ?>">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="password" placeholder="Mot de pass">
+                </div>
+
+                <div>
+                    <input type="submit" value="Je me connecte" name="forminscription" class="btn btn-primary">
+                </div>
+
+            </form>
+            <?php
+            // if (isset($erreur)) {
+            //     // echo $erreur;
+            //     echo '<font color="red">' . $erreur . "</font>";
+            // }
+            ?>
+            <p>ou</p>
+            <a href="formulaireInscription.php">
+                <p class="inscrire">Inscrivez-vous</p>
+            </a>
+        </div>
+
+
+
+
+
     </main>
     <footer>
         <!-- <div class="inscription">

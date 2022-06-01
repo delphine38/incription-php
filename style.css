@@ -1,24 +1,47 @@
 .header {
     background-color: gray;
-    color: rgb(0, 255, 255);
+    display: flex;
+    justify-content: space-between;
     height: 100px;
+}
+
+.h1header {
+    color: rgb(0, 255, 255);
+}
+
+.h1headerformulaireinscription a {
+    color: rgb(0, 255, 255);
+    text-decoration: none;
+}
+
+.h1headerformulaireinscription a:hover {
+    color: rgb(0, 255, 255);
+    text-decoration: none;
 }
 
 .header h1 {
     padding: 30px;
 }
 
+.header h5 {
+    padding: 30px;
+    color: white;
+}
+
 main {
     background-color: #374345;
     color: white;
-    height: 700px;
+    height: 900px;
 }
 
-main h2,
-p {
+
+
+main h2 {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 80px;
+
 }
+
 
 .inscrire {
     color: rgb(0, 255, 255);
@@ -26,6 +49,7 @@ p {
 
 .inscription {
     text-align: center;
+    padding-top: 80px;
 }
 
 .form {
@@ -46,6 +70,8 @@ input {
     background-color: transparent;
 
 }
+
+
 
 input::placeholder {
     color: white;
