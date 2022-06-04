@@ -20,6 +20,12 @@ $bdd = new PDO($dsn = 'mysql:host=127.0.0.1;dbname=inscriptionphp', $username = 
 </head>
 
 <body>
+
+    <?php
+    if (isset($_SESSION['identifiant'])) {
+        echo "Bonjour : " . $_SESSION['identifiant'];
+    }
+    ?>
     <section class="header">
         <article class="h1header">
             <h1>Piscine</h1>
@@ -27,7 +33,6 @@ $bdd = new PDO($dsn = 'mysql:host=127.0.0.1;dbname=inscriptionphp', $username = 
         <!-- <article class="h5header">
             <h5>Se déconnecter</h5>
         </article> -->
-
 
     </section>
 
@@ -37,7 +42,7 @@ $bdd = new PDO($dsn = 'mysql:host=127.0.0.1;dbname=inscriptionphp', $username = 
 
 
         <!-- formulaire de connexion -->
-        <div class="inscription">
+        <div class="divDeConnexion">
             <h3>Connectez-vous</h3>
             <!-- action: ne rien mettre à l'interieur commme ça on reste sur la meme page pour le traitement -->
             <form action="" method="POST">

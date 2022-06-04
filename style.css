@@ -47,7 +47,17 @@ main h2 {
     color: rgb(0, 255, 255);
 }
 
-.inscription {
+.divInscription {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.divDeConnexion {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.divInscriptionCompteCréer {
     text-align: center;
     padding-top: 80px;
 }
@@ -80,4 +90,8 @@ input::placeholder {
 input::placeholder::after {
     color: white;
 
+}
+
+.labelUtilisateur {
+    padding: 50px;
 }

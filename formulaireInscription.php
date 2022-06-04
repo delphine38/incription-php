@@ -85,7 +85,7 @@ if (isset($_POST['forminscription'])) {
     </section>
     <main>
         <h2>Inscription</h2>
-        <div class="inscription">
+        <div class="divInscription">
             <!-- action: ne rien mettre à l'interieur commme ça on reste sur la meme page pour le traitement -->
             <form action="" method="POST">
                 <!-- ici la value indique que la valeur restera afficher même si il y a une erreur -->
