@@ -41,7 +41,7 @@ $bdd = new PDO($dsn = 'mysql:host=127.0.0.1;dbname=inscriptionphp', $username = 
 
             <label class="labelUtilisateur" for="name">Merci d'ajouter vos commentaires</label>
             <div class="mb-3">
-                <input id="name" name="description" type="text" placeholder="Entre vos commentaires" />
+                <input id="name" name="description" type="text" placeholder="Entrez vos commentaires" />
             </div>
             <button type="submit">Envoyer</button>
         </form>
